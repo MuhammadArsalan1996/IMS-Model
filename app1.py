@@ -14,6 +14,7 @@ import pandas as pd
 import streamlit as st 
 
 from PIL import Image
+from flask import Flask, request, jsonify, render_template
 
 
 pickle_in = open("ims.pkl","rb")
@@ -78,6 +79,30 @@ def main():
     if st.button("About"):
         st.text("Lets LEarn")
         st.text("Built with Streamlit")
+       
+        
+        #Mobile App Api
+        
+  @app.route('/predict_api',methods=['GET', 'POST'])
+def predict_api():
+    '''
+    For direct API calls trought request
+    '''   
+    data = request.get_json(force=True)DiabetesTypeOne,DiabetesTypeTwo,liverDisease
+,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP
+    DiabetesTypeOne = data['DiabetesTypeOne']
+    DiabetesTypeTwo = data['DiabetesTypeTwo']
+    liverDisease = data['liverDisease']
+    heartDisease= data['heartDisease']
+    kidneyDisease = data['kidneyDisease']
+    Flu = data['Flu']
+    Fever = data['Fever']
+    LowBP = data['LowBP']
+    HighBP = data['HighBP']
+    
+
+    
+    return jsonify(DiabetesTypeOne=DiabetesTypeOne[0], DiabetesTypeTwo=DiabetesTypeTwo[0], liverDisease=liverDisease[0], heartDisease=heartDisease[0], kidneyDisease=kidneyDisease[0], Flu=Flu[0],Fever=Fever[0],LowBP=LowBP[0],HighBP=HighBP[0])
 
 if __name__=='__main__':
     main()
