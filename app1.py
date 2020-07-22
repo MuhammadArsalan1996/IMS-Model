@@ -88,8 +88,7 @@ def predict_api():
     '''
     For direct API calls trought request
     '''   
-    data = request.get_json(force=True)DiabetesTypeOne,DiabetesTypeTwo,liverDisease
-,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP
+    data = request.get_json(force=True)
     DiabetesTypeOne = data['DiabetesTypeOne']
     DiabetesTypeTwo = data['DiabetesTypeTwo']
     liverDisease = data['liverDisease']
