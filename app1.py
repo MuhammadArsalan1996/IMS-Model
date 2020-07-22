@@ -20,7 +20,7 @@ from flask import Flask, request, jsonify, render_template
 pickle_in = open("ims.pkl","rb")
 classifier=pickle.load(pickle_in)
 
-#@app.route('/')
+@app.route('/')
 def welcome():
     return "Welcome All"
 
