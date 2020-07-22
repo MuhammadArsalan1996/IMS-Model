@@ -20,11 +20,11 @@ from flask import Flask, request, jsonify, render_template
 pickle_in = open("ims.pkl","rb")
 classifier=pickle.load(pickle_in)
 
-#@app.route('/')
+@app.route('/')
 def welcome():
     return "Welcome All"
 
-#@app.route('/predict',methods=["Get"])
+@app.route('/predict',methods=["Get"])
 def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
 ,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
 
@@ -83,7 +83,7 @@ def main():
         
         #Mobile App Api
         
-#@app.route('/predict_api',methods=['GET', 'POST'])
+@app.route('/predict_api',methods=['GET', 'POST'])
 def predict_api():
     '''
     For direct API calls trought request
