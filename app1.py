@@ -88,15 +88,15 @@ def predict_api():
     '''   
     data = request.get_json(force=True)
    
-   DiabetesTypeOne = data['DiabetesTypeOne']
-    DiabetesTypeTwo = data['DiabetesTypeTwo']
-    liverDisease = data['liverDisease']
-    heartDisease= data['heartDisease']
-    kidneyDisease = data['kidneyDisease']
-    Flu = data['Flu']
-    Fever = data['Fever']
-    LowBP = data['LowBP']
-    HighBP = data['HighBP']
+  # DiabetesTypeOne = data['DiabetesTypeOne']
+   # DiabetesTypeTwo = data['DiabetesTypeTwo']
+    #liverDisease = data['liverDisease']
+    #heartDisease= data['heartDisease']
+    #kidneyDisease = data['kidneyDisease']
+    #Flu = data['Flu']
+    #Fever = data['Fever']
+    #LowBP = data['LowBP']
+    #HighBP = data['HighBP']
     def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
 ,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
 
