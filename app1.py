@@ -40,7 +40,7 @@ def main():
     st.title("Select your Disease if necessary")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">IMS Menu ML App </h2>
+   
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
@@ -76,9 +76,7 @@ def main():
       result=predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP)
     st.success('The output is {}'.format(result)) 
    
-    if st.button("About"):
-        st.text("Lets LEarn")
-        st.text("Built with Streamlit")
+   
        
         
         #Mobile App Api
@@ -89,7 +87,8 @@ def predict_api():
     For direct API calls trought request
     '''   
     data = request.get_json(force=True)
-    DiabetesTypeOne = data['DiabetesTypeOne']
+   
+   DiabetesTypeOne = data['DiabetesTypeOne']
     DiabetesTypeTwo = data['DiabetesTypeTwo']
     liverDisease = data['liverDisease']
     heartDisease= data['heartDisease']
@@ -98,10 +97,16 @@ def predict_api():
     Fever = data['Fever']
     LowBP = data['LowBP']
     HighBP = data['HighBP']
-    
+    def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
+,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
+
+   
+    prediction=classifier.predict([[DiabetesTypeOne,DiabetesTypeTwo,liverDisease
+,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP]])
+    print(prediction)
 
     
-    return jsonify(DiabetesTypeOne=DiabetesTypeOne[0], DiabetesTypeTwo=DiabetesTypeTwo[0], liverDisease=liverDisease[0], heartDisease=heartDisease[0], kidneyDisease=kidneyDisease[0], Flu=Flu[0],Fever=Fever[0],LowBP=LowBP[0],HighBP=HighBP[0])
+    return jsonify(prediction)
 
 if __name__=='__main__':
     main()
