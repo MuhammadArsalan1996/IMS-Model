@@ -23,7 +23,6 @@ classifier=pickle.load(pickle_in)
 @app.route('/')
 def welcome():
     return "Welcome All"
-
 @app.route('/predict',methods=["Get"])
 def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
 ,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
@@ -80,7 +79,7 @@ def main():
        
         
         #Mobile App Api
-        @app.route('/predict_api',methods=['GET', 'POST'])
+@app.route('/predict_api',methods=['GET', 'POST'])
 def predict_api():
     '''
     For direct API calls trought request
@@ -102,7 +101,7 @@ def predict_api():
    
     prediction=classifier.predict([[DiabetesTypeOne,DiabetesTypeTwo,liverDisease
 ,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP]])
-    print(prediction)
+    #print(prediction)
 
     
     return jsonify(prediction)
