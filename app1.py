@@ -17,8 +17,10 @@ from PIL import Image
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-pickle_in = open("ims.pkl","rb")
-classifier=pickle.load(pickle_in)
+#pickle_in = open("ims.pkl","rb")
+#classifier=pickle.load(pickle_in)
+# Loading ML Model
+IMS_model = pickle.load(open('ims.pkl', 'rb'))
 
 @app.route('/')
 def welcome():
@@ -28,7 +30,7 @@ def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
 ,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
 
    
-    prediction=classifier.predict([[DiabetesTypeOne,DiabetesTypeTwo,liverDisease
+    prediction=IMS_model.predict([[DiabetesTypeOne,DiabetesTypeTwo,liverDisease
 ,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP]])
     print(prediction)
     return prediction
