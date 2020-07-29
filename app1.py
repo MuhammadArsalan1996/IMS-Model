@@ -95,16 +95,14 @@ def predict_api():
     #Fever = data['Fever']
     #LowBP = data['LowBP']
     #HighBP = data['HighBP']
-    def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
-,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
-
-   
-    prediction=classifier.predict([[DiabetesTypeOne,DiabetesTypeTwo,liverDisease
-,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP]])
-    #print(prediction)
+    recommended=data[1]
+    recommended2=data[1]
+    recommended3=data[1]
+    recommended4=data[1]
+    recommended5=data[1]
 
     
-    return jsonify(prediction)
+    return jsonify(recommended,recommended2,recommended3,recommended4,recommended5)
 
 
 if __name__=='__main__':
