@@ -17,8 +17,7 @@ from PIL import Image
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-#pickle_in = open("ims.pkl","rb")
-#classifier=pickle.load(pickle_in)
+
 # Loading ML Model
 IMS_model = pickle.load(open('ims.pkl', 'rb'))
 
@@ -97,14 +96,15 @@ def predict_api():
     #Fever = data['Fever']
     #LowBP = data['LowBP']
     #HighBP = data['HighBP']
-    recommended=data[1]
-    recommended2=data[1]
-    recommended3=data[1]
-    recommended4=data[1]
-    recommended5=data[1]
+    recommended =IMS_model.predict(data)
+    recommended2 =IMS_model.predict(data)
+    recommended3 =IMS_model.predict(data)
+    recommended4 =IMS_model.predict(data)
+    recommended5 =IMS_model.predict(data)
+   
 
     
-    return jsonify(recommended,recommended2,recommended3,recommended4,recommended5)
+    return jsonify(recommended=recommended,recommended2=recommended2,recommended3=recommended3,recommended4=recommended4,recommended5=recommended5)
 
 
 if __name__=='__main__':
