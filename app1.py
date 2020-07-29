@@ -81,32 +81,7 @@ def main():
         
         #Mobile App Api
         
-@app.route('/predict_api',methods=['GET', 'POST'])
-def predict_api():
-    '''
-    For direct API calls trought request
-    '''   
-    data = request.get_json(force=True)
-   
-  # DiabetesTypeOne = data['DiabetesTypeOne']
-   # DiabetesTypeTwo = data['DiabetesTypeTwo']
-    #liverDisease = data['liverDisease']
-    #heartDisease= data['heartDisease']
-    #kidneyDisease = data['kidneyDisease']
-    #Flu = data['Flu']
-    #Fever = data['Fever']
-    #LowBP = data['LowBP']
-    #HighBP = data['HighBP']
-    def predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease
-,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP):
 
-   
-    prediction=classifier.predict([[DiabetesTypeOne,DiabetesTypeTwo,liverDisease
-,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP]])
-    print(prediction)
-
-    
-    return jsonify(prediction)
 
 if __name__=='__main__':
     main()
