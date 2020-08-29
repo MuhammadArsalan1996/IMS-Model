@@ -74,7 +74,7 @@ def main():
     result=""
     if st.button("Predict"):
       result=predict_note_authentication(DiabetesTypeOne,DiabetesTypeTwo,liverDisease,heartDisease, kidneyDisease,Flu,Fever,LowBP,HighBP)
-    st.success('The output is {}'.format(result)) 
+    st.success('Recommended {}'.format(result)) 
    
    
        
