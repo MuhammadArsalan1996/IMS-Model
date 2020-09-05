@@ -98,11 +98,11 @@ def predict_api():
     #HighBP = data['HighBP']
     
     final_features = [np.array(data)]
-    recommended =IMS_model.predict(data)
-    recommended2 =IMS_model.predict(data)
-    recommended3 =IMS_model.predict(data)
-    recommended4 =IMS_model.predict(data)
-    recommended5 =IMS_model.predict(data)
+    recommended =IMS_model.predict(final_features)
+    recommended2 =IMS_model.predict(final_features)
+    recommended3 =IMS_model.predict(final_features)
+    recommended4 =IMS_model.predict(final_features)
+    recommended5 =IMS_model.predict(final_features)
    
 
     
