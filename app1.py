@@ -96,6 +96,8 @@ def predict_api():
     #Fever = data['Fever']
     #LowBP = data['LowBP']
     #HighBP = data['HighBP']
+    
+    final_features = [np.array(data)]
     recommended =IMS_model.predict(data)
     recommended2 =IMS_model.predict(data)
     recommended3 =IMS_model.predict(data)
