@@ -106,7 +106,7 @@ def predict_api():
    
 
     
-    return jsonify(recommended=recommended,recommended2=recommended2,recommended3=recommended3,recommended4=recommended4,recommended5=recommended5)
+    return jsonify(recommended=recommended[0],recommended2=recommended2[0],recommended3=recommended3[0],recommended4=recommended4[0],recommended5=recommended5[0])
 
 
 if __name__=='__main__':
