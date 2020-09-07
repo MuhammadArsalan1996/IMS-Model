@@ -85,18 +85,24 @@ def predict_api():
     '''
     For direct API calls trought request
     '''   
-    data = request.get_json(force=True)
+    int_feature = request.get_json(force=True)
+    Recommended= int_feature[0][1];
+    Recommended2= int_feature[0][2]; 
+    Recommended3= int_feature[0][3];
+    Recommended4= int_feature[0][4];
+    Recommended5= int_feature[0][5];  
+    data [int_features[0][1], int_features[0][2], int_features[0][3], int_features[0][4], int_features[0][5]]
     final_features = [np.array(data)]
     recommended  =IMS_model.predict(final_features)
-    recommended2 =IMS_model.predict(final_features)
-    recommended3 =IMS_model.predict(final_features)
-    recommended4 =IMS_model.predict(final_features)
-    recommended5 =IMS_model.predict(final_features)
+   # recommended2 =IMS_model.predict(final_features)
+   # recommended3 =IMS_model.predict(final_features)
+   # recommended4 =IMS_model.predict(final_features)
+   # recommended5 =IMS_model.predict(final_features)
    
 
     
-    return jsonify(recommended=recommended[0][0],recommended2=recommended2[0][0],recommended3=recommended3[0][0],recommended4=recommended4[0][0],recommended5=recommended5[0][0])
-
+   # return jsonify(recommended=recommended[0][0],recommended2=recommended2[0][0],recommended3=recommended3[0][0],recommended4=recommended4[0][0],recommended5=recommended5[0][0])
+     return jsonify(recommended=recommended[0][0]);
 
 if __name__=='__main__':
     main()
