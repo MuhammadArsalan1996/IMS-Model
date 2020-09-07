@@ -91,10 +91,10 @@ def predict_api():
       int_features[2]=recommended2
       int_features[3]=recommended3
       int_features[4]=recommended4
-   data = [int_features[0], int_features[1], int_features[2], int_features[3], int_features[4]]
+  # data = [int_features[0], int_features[1], int_features[2], int_features[3], int_features[4]]
      
     
-    final_features = [np.array(data)]
+    final_features = [np.array(int_features)]
     recommended =IMS_model.predict(final_features)
     recommended2 =IMS_model.predict(final_features)
     recommended3 =IMS_model.predict(final_features)
