@@ -85,12 +85,12 @@ def predict_api():
     '''
     For direct API calls trought request
     '''   
-    int_features = request.get_json(force=True)
-     recommended = int_features[0] 
-     recommended1 = int_features[1]
-     recommended2 = int_features[2]
-     recommended3 = int_features[3]
-     recommended4 = int_features[4]
+      int_features = request.get_json(force=True)
+      int_features[0] =recommended
+      int_features[1]=recommended1
+      int_features[2]=recommended2
+      int_features[3]=recommended3
+      int_features[4]=recommended4
    data = [int_features[0], int_features[1], int_features[2], int_features[3], int_features[4]]
      
     
