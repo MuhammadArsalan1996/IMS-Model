@@ -89,7 +89,7 @@ def predict_api():
   
     
     
-    final_features = [np.array(data,data)]
+    final_features = [np.array(data)]
     recommended  =IMS_model.predict(final_features)
    # recommended2 =IMS_model.predict(final_features)
    # recommended3 =IMS_model.predict(final_features)
