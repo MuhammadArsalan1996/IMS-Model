@@ -86,12 +86,20 @@ def predict_api():
     For direct API calls trought request
     '''   
     int_feature = request.get_json(force=True)
-    Recommended= int_feature[0][1];
-    Recommended2= int_feature[0][2]; 
-    Recommended3= int_feature[0][3];
-    Recommended4= int_feature[0][4];
-    Recommended5= int_feature[0][5];  
-    data [int_features[0][1], int_features[0][2], int_features[0][3], int_features[0][4], int_features[0][5]]
+    Recommended= int_feature[1];
+    Recommended2= int_feature[2]; 
+    Recommended3= int_feature[3];
+    Recommended4= int_feature[4];
+    Recommended5= int_feature[5];  
+    data [int_features[1], int_features[2], int_features[3], int_features[4], int_features[5]]
+    normalized_data = Normalizer().fit_transform([data])
+    
+    int_features[1] = normalized_data[0][0]
+    int_features[2] = normalized_data[0][1]
+    int_features[3] = normalized_data[0][2]
+    int_features[4] = normalized_data[0][3]
+    int_features[5] = normalized_data[0][4]
+    
     final_features = [np.array(data)]
     recommended  =IMS_model.predict(final_features)
    # recommended2 =IMS_model.predict(final_features)
